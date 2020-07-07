@@ -1,16 +1,21 @@
 # Ecommerce-Spring-boot-Angular
 Ecommerce site under development with angular and spring boot
 
---- Requirements
+## Requirements
 
 - maven
 - docker
 - Angular cli 8.0.3
 
 
+## Instalation
 
-<br>1 - Add to the hosts file -> ^^^^dev.security.com^^^^ OR change the default url inside to the preferred one -> .docker/tomcat/server.xml   (In case its changed, additional change should be made on -> /angular-ecomerce/src/app/services/product.service.ts)
+1. Add to the hosts file -> **dev.security.com** OR *change the default url inside to the preferred one -> .docker/tomcat/server.xml* .
+   - In case its changed, additional change should be made on -> /angular-ecomerce/src/app/services/product.service.ts
 
-<br>2 - Enter the directory spring-boot-ecommerce folder and run on terminal -----> sh initialize.sh
 
-<br>3 - Enter the directory angular-ecomerce and run on terminal ng serve.  (Remember to use npm install before this step)
+1. In spring-boot-ecommerce folder run on terminal the following script to start maven and docker **sh initialize.sh**
+
+1. In angular-ecomerce folder ->  **npm install**.
+
+1. Start angular **ng serve**.
