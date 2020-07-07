@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  tomcat:
+    build:
+      context: ./.docker/tomcat
+      dockerfile: Dockerfile
+    networks:
+      - backend-ecommerce
+      - frontend-ecommerce
+    ports:
+      - "80:8080"
+      - "443:443"
+    depends_on:
+      - mysql
+
+  mysql:
+    build:
+      context: ./.docker/mysql
+      dockerfile: Dockerfile
+    networks:
+      - backend-ecommerce
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./.docker/mysql/db:/var/lib/mysql
+      - ./.docker/mysql/scripts/:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=ecommerce
+
+networks:
+  backend-ecommerce:
+  frontend-ecommerce:
