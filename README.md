@@ -14,7 +14,7 @@ Ecommerce site under development with angular and spring boot
    - In case its changed, additional change should be made on -> /angular-ecomerce/src/app/services/product.service.ts
 
 
-1. In spring-boot-ecommerce folder run on terminal the following script to start maven and docker **sh initialize.sh**
+1. In spring-boot-ecommerce folder run on terminal the following script **sh initialize.sh**
 
 1. In angular-ecomerce folder ->  **npm install**.
 
