@@ -5,7 +5,7 @@
 mvn install
 
 # if the file doesn't exist, try to create folder
-if [ ! -f ./.docker/mysql/scripts/spring_security_custom_user_registration_demo.sql ]
+if [ ! -e ./.docker/mysql/scripts/spring_security_custom_user_registration_demo.sql ]
 
 then
 
@@ -21,7 +21,8 @@ echo --------------------------------Project was build.-------------------------
 
 docker-compose up -d --build
 
-sleep 5
+echo --------------------------------"Waiting for the database to initialize (first time takes needs a few seconds more)"--------------------------------
+sleep 10
 
 # OPEN BROWSER WITH THE url
 /usr/bin/open -a "/Applications/Google Chrome.app" 'http://dev.security.com/api'
